@@ -107,18 +107,17 @@ void loop() {
     beep_event = t.every(500, toggle_beep, 10);
     alarm_event = t.after(10000, sound_alarm, 1);
     red();
-    alarm_state = ACTIVATED;
   }
 
   if(read_keys > 3){
     Serial.println("Read keys > 4");
     if(read_state == PASSWORD){
       if(array_cmp(password, key_input, 4, 4)){
-        if(alarm_state == ENABLED || alarm_state == ENABLING || alarm_state == ACTIVATED){
-          disable_alarm();
+        if(alarm_state == DISABLED){
+          enable_alarm();
         }
         else{
-          enable_alarm();
+          disable_alarm();
         }
       }
       else{
@@ -136,6 +135,7 @@ void loop() {
       password[3] = key_input[3];
       delay(500);
       red();
+      read_state = PASSWORD;
     }
     read_keys = 0;
   }
@@ -145,8 +145,6 @@ void loop() {
   */
   if(!btn1.read() && !btn2.read() && !btn3.read() && alarm_state == DISABLED){
       Serial.println("New password state");
-      digitalWrite(LED_RED, 1);
-      digitalWrite(LED_GREEN, 1);
       for(int i = 0; i < 2; i++){
         orange();
         delay(500);
@@ -217,6 +215,7 @@ void disable_alarm(){
   digitalWrite(BEEP, 0);
   alarm_state = DISABLED;
   orange();
+  beep_counter = 0;
 }
 
 void toggle_beep(){
