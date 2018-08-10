@@ -13,14 +13,14 @@ Timer t;
 #define TRIGGERED 3
 #define ACTIVATED 4
 
-#define LED_RED 11
-#define LED_GREEN 12
+#define LED_RED 5
+#define LED_GREEN 3
 
-#define BTN1 2
-#define BTN2 3
-#define BTN3 4
+#define BTN1 9
+#define BTN2 10
+#define BTN3 11
 
-#define DOOR_SW 5
+#define DOOR_SW 13
 
 #define RELAY 6
 #define BEEP 7
@@ -28,6 +28,8 @@ Timer t;
 int password[] = {1, 2, 3, 3};
 int key_input[] = {0, 0, 0, 0};
 int read_keys = 0;
+
+int alarm_timer = 15000;
 
 int beep_event = -1;
 int alarm_event = -1;
@@ -80,9 +82,8 @@ void setup() {
  door_sw.interval(10);
 
  Serial.begin(9600);
- Serial.println("Initial setup complete");
 
- if(digitalRead(DOOR_SW)){
+ if(!digitalRead(DOOR_SW)){
   alarm_state = ENABLED;
   green();
  }
@@ -90,6 +91,7 @@ void setup() {
   alarm_state = DISABLED;
   orange();
  }
+ Serial.println("Initial setup complete");
 }
 
 void loop() {
@@ -101,11 +103,11 @@ void loop() {
   /*
    * Door opened, trigger alarm!
    */
-  if(alarm_state == ENABLED && !door_sw.read()){
+  if(alarm_state == ENABLED && door_sw.read()){
     Serial.println("Alarm triggered!");
     alarm_state = TRIGGERED;
-    beep_event = t.every(500, toggle_beep, 10);
-    alarm_event = t.after(10000, sound_alarm, 1);
+    //beep_event = t.every(500, toggle_beep, 10);
+    alarm_event = t.after(alarm_timer, sound_alarm, 1);
     red();
   }
 
@@ -192,13 +194,17 @@ void sound_alarm(){
 void enable_alarm(){
   Serial.println("Enable alarm!");
   green();
-  beep_event = t.every(500, toggle_beep, 12);
-  alarm_event = t.after(6000, set_alarm_state_enabled, 1);
+  beep_event = t.every(700, toggle_beep, 40);
+  alarm_event = t.after(alarm_timer, set_alarm_state_enabled, 1);
   alarm_state = ENABLING;
 }
 
 void set_alarm_state_enabled(){
   alarm_state = ENABLED;
+  Serial.println("Alarm enabled");
+  digitalWrite(BEEP, 1);
+  delay(1000);
+  digitalWrite(BEEP, 0);
 }
 
 void disable_alarm(){

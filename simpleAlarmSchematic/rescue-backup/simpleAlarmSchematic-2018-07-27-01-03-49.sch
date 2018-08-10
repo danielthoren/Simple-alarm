@@ -1,0 +1,320 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:arduino
+LIBS:analog_devices
+LIBS:switches
+LIBS:relays
+LIBS:simpleAlarmSchematic-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Arduino_Nano_Socket XA?
+U 1 1 5B5036C9
+P 3500 6250
+F 0 "XA?" V 3600 6250 60  0000 C CNN
+F 1 "Arduino_Nano_Socket" V 3400 6250 60  0000 C CNN
+F 2 "" H 5300 10000 60  0001 C CNN
+F 3 "" H 5300 10000 60  0001 C CNN
+	1    3500 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push SW1
+U 1 1 5B504866
+P 2800 4850
+F 0 "SW1" H 2850 4950 50  0000 L CNN
+F 1 "SW_Push" H 2800 4800 50  0000 C CNN
+F 2 "" H 2800 5050 50  0001 C CNN
+F 3 "" H 2800 5050 50  0001 C CNN
+	1    2800 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push SW2
+U 1 1 5B504A12
+P 3450 4850
+F 0 "SW2" H 3500 4950 50  0000 L CNN
+F 1 "SW_Push" H 3450 4790 50  0000 C CNN
+F 2 "" H 3450 5050 50  0001 C CNN
+F 3 "" H 3450 5050 50  0001 C CNN
+	1    3450 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_Push SW3
+U 1 1 5B504A43
+P 4100 4850
+F 0 "SW3" H 4150 4950 50  0000 L CNN
+F 1 "SW_Push" H 4100 4790 50  0000 C CNN
+F 2 "" H 4100 5050 50  0001 C CNN
+F 3 "" H 4100 5050 50  0001 C CNN
+	1    4100 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_02X01 p1
+U 1 1 5B504F41
+P 1350 6950
+F 0 "p1" H 1350 7050 50  0000 C CNN
+F 1 "5v_DC" H 1350 6850 50  0000 C CNN
+F 2 "" H 1350 5750 50  0001 C CNN
+F 3 "" H 1350 5750 50  0001 C CNN
+	1    1350 6950
+	0    1    1    0   
+$EndComp
+$Comp
+L LED_Small D1
+U 1 1 5B5058A8
+P 5050 6600
+F 0 "D1" H 5000 6725 50  0000 L CNN
+F 1 "LED_green" H 4875 6500 50  0000 L CNN
+F 2 "" V 5050 6600 50  0001 C CNN
+F 3 "" V 5050 6600 50  0001 C CNN
+	1    5050 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L LED_Small D2
+U 1 1 5B50598D
+P 5500 6600
+F 0 "D2" H 5450 6725 50  0000 L CNN
+F 1 "LED_red" H 5325 6500 50  0000 L CNN
+F 2 "" V 5500 6600 50  0001 C CNN
+F 3 "" V 5500 6600 50  0001 C CNN
+	1    5500 6600
+	1    0    0    -1  
+$EndComp
+Text Label 1600 6850 0    60   ~ 0
+GND
+Text Label 1600 7050 0    60   ~ 0
+5V
+$Comp
+L Buzzer BZ1
+U 1 1 5B5061D7
+P 5800 6050
+F 0 "BZ1" H 5950 6100 50  0000 L CNN
+F 1 "Buzzer" H 5950 6000 50  0000 L CNN
+F 2 "" V 5775 6150 50  0001 C CNN
+F 3 "" V 5775 6150 50  0001 C CNN
+	1    5800 6050
+	1    0    0    -1  
+$EndComp
+Text Label 5300 7150 0    60   ~ 0
+GND
+$Comp
+L G5Q-1A RL?
+U 1 1 5B506402
+P 8450 5550
+F 0 "RL?" H 9000 5900 50  0000 L CNN
+F 1 "G5Q-1A" H 9000 5800 50  0000 L CNN
+F 2 "Relays_THT:Relay_SPST-NO_OMRON-G5Q" H 9000 5700 50  0001 L CNN
+F 3 "" H 8650 6150 50  0000 C CNN
+	1    8450 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_02X01 J2
+U 1 1 5B5065A4
+P 6650 5400
+F 0 "J2" H 6650 5500 50  0000 C CNN
+F 1 "RE_SIG" H 6650 5300 50  0000 C CNN
+F 2 "" H 6650 4200 50  0001 C CNN
+F 3 "" H 6650 4200 50  0001 C CNN
+	1    6650 5400
+	0    1    1    0   
+$EndComp
+$Comp
+L Buzzer H1
+U 1 1 5B5076CE
+P 9750 5300
+F 0 "H1" H 9900 5350 50  0000 L CNN
+F 1 "Car horn" H 9900 5250 50  0000 L CNN
+F 2 "" V 9725 5400 50  0001 C CNN
+F 3 "" V 9725 5400 50  0001 C CNN
+	1    9750 5300
+	1    0    0    -1  
+$EndComp
+Text GLabel 8850 6050 3    60   Input ~ 0
+12V
+Text GLabel 9650 6050 3    60   Input ~ 0
+GND
+$Comp
+L CONN_02X01 J3
+U 1 1 5B5092A5
+P 5600 4600
+F 0 "J3" H 5600 4700 50  0000 C CNN
+F 1 "DOOR_SW_CONN" H 5600 4500 50  0000 C CNN
+F 2 "" H 5600 3400 50  0001 C CNN
+F 3 "" H 5600 3400 50  0001 C CNN
+	1    5600 4600
+	-1   0    0    1   
+$EndComp
+$Comp
+L SW_Push SW4
+U 1 1 5B5097C1
+P 5600 3000
+F 0 "SW4" H 5650 3100 50  0000 L CNN
+F 1 "DOOW_SW" H 5600 2940 50  0000 C CNN
+F 2 "" H 5600 3200 50  0001 C CNN
+F 3 "" H 5600 3200 50  0001 C CNN
+	1    5600 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 4600 2600 4850
+Wire Wire Line
+	1500 4600 5350 4600
+Wire Wire Line
+	3250 4600 3250 4850
+Wire Wire Line
+	3900 4600 3900 4850
+Connection ~ 3250 4600
+Wire Wire Line
+	1350 7200 1500 7200
+Wire Wire Line
+	1500 7200 1500 7050
+Wire Wire Line
+	1500 7050 2200 7050
+Wire Wire Line
+	1350 6700 1500 6700
+Wire Wire Line
+	1500 4600 1500 6850
+Wire Wire Line
+	1500 6850 2200 6850
+Connection ~ 2600 4600
+Connection ~ 1500 6700
+Wire Wire Line
+	4800 5350 4800 5100
+Wire Wire Line
+	4800 5100 3000 5100
+Wire Wire Line
+	3000 5100 3000 4850
+Wire Wire Line
+	4800 5450 4850 5450
+Wire Wire Line
+	4850 5450 4850 5050
+Wire Wire Line
+	4850 5050 3650 5050
+Wire Wire Line
+	3650 5050 3650 4850
+Wire Wire Line
+	4800 5550 4900 5550
+Wire Wire Line
+	4900 5550 4900 5000
+Wire Wire Line
+	4900 5000 4300 5000
+Wire Wire Line
+	4300 5000 4300 4850
+Wire Wire Line
+	4950 6600 4850 6600
+Wire Wire Line
+	4850 6600 4850 6800
+Wire Wire Line
+	4850 6800 6650 6800
+Wire Wire Line
+	5300 6600 5300 7450
+Wire Wire Line
+	5300 6600 5400 6600
+Wire Wire Line
+	5300 7450 2000 7450
+Wire Wire Line
+	2000 7450 2000 6850
+Connection ~ 2000 6850
+Connection ~ 5300 6800
+Wire Wire Line
+	5150 6600 5150 6350
+Wire Wire Line
+	5150 6350 4800 6350
+Wire Wire Line
+	5600 6600 5600 6250
+Wire Wire Line
+	5600 6250 4800 6250
+Wire Wire Line
+	5700 6800 5700 6150
+Wire Wire Line
+	5700 5950 5700 5850
+Wire Wire Line
+	5700 5850 4800 5850
+Wire Wire Line
+	6650 5150 6300 5150
+Wire Wire Line
+	6300 5150 6300 5750
+Wire Wire Line
+	6300 5750 4800 5750
+Wire Wire Line
+	6650 6800 6650 5650
+Connection ~ 5700 6800
+Wire Notes Line
+	6650 5150 6650 5050
+Wire Notes Line
+	6650 5050 8450 5050
+Wire Notes Line
+	6650 5600 6650 5650
+Wire Notes Line
+	6650 5650 8450 5650
+Wire Notes Line
+	9650 5200 9650 5050
+Wire Notes Line
+	9650 5050 8850 5050
+Wire Notes Line
+	9650 5400 9650 6050
+Wire Notes Line
+	8850 5650 8850 6050
+Connection ~ 3900 4600
+Wire Wire Line
+	5850 4600 5850 5650
+Wire Wire Line
+	5850 5650 4800 5650
+Wire Notes Line
+	5400 3000 5400 4600
+Wire Notes Line
+	5800 3000 5800 4600
+Wire Notes Line
+	1350 6700 900  6700
+Wire Notes Line
+	1350 7200 900  7200
+Text GLabel 900  7200 0    60   Input ~ 0
+5V
+Text GLabel 900  6700 0    60   Input ~ 0
+GND
+$EndSCHEMATC
